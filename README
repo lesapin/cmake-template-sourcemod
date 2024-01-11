@@ -2,7 +2,7 @@ Create SourceMod projects in Visual Studio 2022 with Windows and compile them in
 
 Currently only supports building with GCC
 
-Prerequisites: A working WSL version 2 with a full development environment and a SRCDS setup
+Prerequisites: A working WSL version 2 with a full development environment and a SRCDS+SM setup
 1. Install Windows Subsystem for Linux. Check that the installed WSL is version 2 using "wsl --list -v".
 
 2. In the (Debian based) Linux, install CMake and the development environment including multiarch support  with "sudo dpkg --add-architecture i386; sudo apt-get update && sudo apt-get upgrade" and "sudo apt-get install build-essential cmake ninja-build rsync zip gcc-multilib g++-multilib"
