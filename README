@@ -1,5 +1,7 @@
 Create SourceMod projects in Visual Studio 2022 with Windows and compile them in WSL2 for Linux servers.  
 
+Currently only supports building with GCC
+
 Prerequisites: A working WSL version 2 with a full development environment and a SRCDS setup
 1. Install Windows Subsystem for Linux. Check that the installed WSL is version 2 using "wsl --list -v".
 
