@@ -27,10 +27,10 @@ project ("CMake Template Project"
             LANGUAGES CXX)
         
 ### Linux user/owner of the server sourcemod directory
-set(install_owner "steam") 
+set(install_owner "username") 
 
 ### /path/to/ server sourcemod directory
-cmake_path(SET install_path NORMALIZE "/opt/tf2classic/sdk2013/tf2classic/addons/sourcemod")
+cmake_path(SET install_path NORMALIZE "/path/to/addons/sourcemod")
 
 MESSAGE(CHECK_START "Searching for SP compiler")
 if(EXISTS ${install_path}/scripting/spcomp)
