@@ -29,9 +29,12 @@ target_compile_options(extension
                 -fvisibility-inlines-hidden -Wno-overloaded-virtual
                 -Wno-non-virtual-dtor -Wno-delete-non-virtual-dtor
                 $<$<CONFIG:Debug>: 
-                    -Wall -Wextra -pedantic -g -Og -ggdb -fsanitize=address >
+                    -Wall -Wextra -pedantic -g -Og -ggdb 
+                >
                 $<$<CONFIG:Release>: 
-                    -s -O3 > >
+                    -s -O3 
+                > 
+            >
 )
 
 target_compile_definitions(extension
@@ -40,13 +43,17 @@ target_compile_definitions(extension
                 -D_stricmp=strcasecmp -D_snprintf=snprintf
                 -D_vsnprintf=vsnprintf -DHAVE_STDINT_H
                 $<$<CONFIG:Debug>: 
-                    -DDEBUG >
+                    -DDEBUG
+                >
                 $<$<CONFIG:Release>: 
-                    -DNDEBUG > >
+                    -DNDEBUG 
+                > 
+            >
 )
 
 target_link_libraries(extension 
-    PRIVATE -lm -m32 "-Wl,--exclude-libs,ALL" -shared
+    PRIVATE $<$<CONFIG:Debug>: -static-libasan -fsanitize=address >
+            -lm -m32 "-Wl,--exclude-libs,ALL" -shared
 )
 
 target_include_directories(extension 
