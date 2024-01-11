@@ -41,7 +41,7 @@ elseif(EXISTS ${install_path}/scripting/spcomp64)
     MESSAGE(CHECK_PASS "found at: ${SP_COMPILER}")
 else()
     set(SP_COMPILER "")
-    MESSAGE(CHECK_FAIL "Couldn't find SourcePawn compiler at ${install_path}/scripting/. Not compiling plugins")
+    MESSAGE(CHECK_FAIL "couldn't find SourcePawn compiler at ${install_path}/scripting/. Not compiling plugins")
 endif()
 
 ### Finding the SourceMod SDK and any game SDKs on the WSL
