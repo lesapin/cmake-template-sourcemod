@@ -54,11 +54,11 @@ else()
     MESSAGE(FATAL_ERROR "Couldn't find SourceMod SDK at ${build_root}/sourcemod/")
 endif()
 
-if(IS_DIRECTORY ${build_root}/hl2sdk-tf2)
-    set (SDK_TF2 "${build_root}/hl2sdk-tf2")
-    MESSAGE(STATUS "Found TF2 SDK directory at ${SDK_TF2}")
-elseif()
-    MESSAGE(STATUS "Looking for other SDKs")
+if(IS_DIRECTORY ${build_root}/hl2sdk)
+    set (HL2SDK "${build_root}/hl2sdk")
+    MESSAGE(STATUS "Found HL2SDK directory at ${HL2SDK}")
+else()
+    MESSAGE(STATUS "No other SDKs found")
 endif()
 
 ##################################################################
