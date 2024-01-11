@@ -21,8 +21,8 @@
 #
 add_library(extension 
     SHARED
-    "extension.cpp" "${SM}/public/smsdk_ext.cpp"
-) # Add all your .cpp files here
+    "extension.cpp" "${SM}/public/smsdk_ext.cpp" # Add all your .cpp files
+) 
 
 string(REPLACE " " "" ext_name ${CMAKE_PROJECT_NAME})
 set_target_properties(extension PROPERTIES OUTPUT_NAME "${ext_name}.ext" ) 
