@@ -6,11 +6,9 @@ Prerequisites: A working WSL version 2 with a full development environment and a
 2. In the (Debian based) Linux, install CMake and the development environment including multiarch support  with "sudo dpkg --add-architecture i386; sudo apt-get update && sudo apt-get upgrade" and "sudo apt-get install build-essential cmake ninja-build rsync zip gcc-multilib g++-multilib"
 
 In Visual Studio 2022:
-3. In Visual Studio, open the folder where the top level _CMakeLists.txt_ is located. 
+3. Under Tools > CMake > General, select "Always use CMake presets", close the current folder and reopen it again. This should make the connections and configuration managers appear in the top bar. Refer to [1] if you have any problems.
 
-4. Under Tools > CMake > General, select "Always use CMake presets", close the current folder and reopen it again. This should make the connections and configuration managers appear in the top bar. Refer to [1] if you have any problems.
-
-5. Initialize your project by cloning this repository: either by using PowerShell or through Visual Studio's "File -> Clone Repository"
+4. Initialize your project by cloning this repository: either by using PowerShell or through Visual Studio's "File -> Clone Repository"
 
 Afterwards:
 You need to move the SourceMod SDK into the top level build folder inside your WSL installation. For example, if the user on Linux is called "admin" then the folder should be located by default at /home/admin/.vs/sourcemod
