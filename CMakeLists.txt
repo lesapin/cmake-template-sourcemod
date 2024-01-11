@@ -25,12 +25,15 @@ project ("CMake Template Project"
             VERSION 1.0.0
             DESCRIPTION "CMake template for SourceMod projects"
             LANGUAGES CXX)
-        
-### Linux user/owner of the server sourcemod directory
-set(install_owner "username") 
+
+set(install_permissions
+    OWNER_WRITE OWNER_READ OWNER_EXECUTE
+    GROUP_WRITE GROUP_READ GROUP_EXECUTE
+    WORLD_WRITE WORLD_READ WORLD_EXECUTE
+)
 
 ### /path/to/ server sourcemod directory
-cmake_path(SET install_path NORMALIZE "/path/to/addons/sourcemod")
+cmake_path(SET install_path NORMALIZE "/path/to/.../addons/sourcemod")
 
 MESSAGE(CHECK_START "Searching for SP compiler")
 if(EXISTS ${install_path}/scripting/spcomp)
@@ -41,7 +44,7 @@ elseif(EXISTS ${install_path}/scripting/spcomp64)
     MESSAGE(CHECK_PASS "found at: ${SP_COMPILER}")
 else()
     set(SP_COMPILER "")
-    MESSAGE(CHECK_FAIL "couldn't find SourcePawn compiler in ${install_path}/scripting/. Not compiling plugins")
+    MESSAGE(CHECK_FAIL "couldn't find SourcePawn compiler at ${install_path}/scripting/. Not compiling plugins")
 endif()
 
 ### Finding the SourceMod SDK and any game SDKs on the WSL
@@ -57,8 +60,8 @@ endif()
 if(IS_DIRECTORY ${build_root}/hl2sdk)
     set (HL2SDK "${build_root}/hl2sdk")
     MESSAGE(STATUS "Found HL2SDK directory at ${HL2SDK}")
-else()
-    MESSAGE(STATUS "No other SDKs found")
+elseif()
+    MESSAGE(STATUS "Looking for other SDKs")
 endif()
 
 ##################################################################
