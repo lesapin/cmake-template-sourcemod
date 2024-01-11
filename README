@@ -12,7 +12,7 @@ In Visual Studio 2022:
 
 5. Initialize your project by cloning this repository: either by using PowerShell or through Visual Studio's "Git -> Clone Repository"
 
-You need to move the SourceMod SDK (and optionally any other SDK) into the top level build folder inside your WSL installation. For example, if the user on Linux is called "admin" then the folder should be located by default at /home/admin/.vs/sourcemod
+You need to move the SourceMod SDK into the top level build folder inside your WSL installation. For example, if the user on Linux is called "admin" then the folder should be located by default at /home/admin/.vs/sourcemod
 
 If your extension isn't loading because of an outdated GLIBCXX_* version, you can follow the instructions in [2]. Renaming the stdc++ library in .../sdk2013/bin/libstdc++.so.6 will probably fix your issue.
 
