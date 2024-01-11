@@ -10,7 +10,7 @@ In Visual Studio 2022:
 
 4. Under Tools > CMake > General, select "Always use CMake presets", close the current folder and reopen it again. This should make the connections and configuration managers appear in the top bar. Refer to [1] if you have any problems.
 
-5. Initialize your project by cloning this repository: either by using PowerShell or through Visual Studio's "Git -> Clone Repository"
+5. Initialize your project by cloning this repository: either by using PowerShell or through Visual Studio's "File -> Clone Repository"
 
 You need to move the SourceMod SDK into the top level build folder inside your WSL installation. For example, if the user on Linux is called "admin" then the folder should be located by default at /home/admin/.vs/sourcemod
 
