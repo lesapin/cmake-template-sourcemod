@@ -1,0 +1,2 @@
+# sm-cmake-template
+CMake template for SourceMod development. Create your projects in Visual Studio 2022 with Windows and compile them in WSL2 for Linux servers.  
